@@ -5,8 +5,9 @@
 #include <time.h>
 
 void delay(int contador){
-while(contador) --contador;
+  while(contador) --contador;
 }
+
 void aula_03_08(void){
 RCC-> AHB1ENR |= 1;           // liga o clock do GPIOA
 GPIOA -> MODER |= 0b01 << 12; // pino PA6 como saída
@@ -43,8 +44,8 @@ Delay_ms(1000);
 }
 }
 void aula_22_08(void){
-RCC-> AHB1ENR |= (1 << 2); // liga o clock do GPIOA
-GPIOC -> MODER |= 0b01; // pino PA6 como saída
+  RCC-> AHB1ENR |= (1 << 2); // liga o clock do GPIOA
+  GPIOC -> MODER |= 0b01; // pino PA6 como saída
   while(1){
     for(int i = 0 ;i < 8; i++){
     GPIOC->ODR ^=1;      // alterna o estado do pino PA6
@@ -53,6 +54,7 @@ GPIOC -> MODER |= 0b01; // pino PA6 como saída
     Delay_ms(1000);
   }
 }
+
 void aula_24_08(void){
 RCC->AHB1ENR |= 1;           // liga o clock do GPIOA
 GPIOA->MODER |= 0b01 << 12; // pino PA6 como saída
