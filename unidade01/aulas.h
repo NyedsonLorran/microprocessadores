@@ -16,7 +16,7 @@ GPIOA -> MODER |= 0b01 << 12; // pino PA6 como saída
     Delay_ms(50);
     GPIOA->ODR &= ~(1 << 6);  //nível baixo no pino
     Delay_ms(50);
-  };
+  }
 }
 void aula_15_08(void){
 RCC-> AHB1ENR |= (1 << 0);          // liga o clock do GPIOA
