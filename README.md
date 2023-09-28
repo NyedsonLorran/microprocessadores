@@ -27,4 +27,28 @@ lista de exercícios resolvidos da primeira unidade da disciplina de microproces
         </sub>
       </a>
     </td>
+              <tr>
+    <td align="center">
+      <a href="https://github.com/DiogorsLira">
+        <sub>
+          <b>Diogo Lira</b>
+        </sub>
+      </a>
+    </td>
+      <tr>
+    <td align="center">
+      <a href="https://github.com/robertofilhosf">
+        <sub>
+          <b>Roberto Filho</b>
+        </sub>
+      </a>
+    </td>
+          <tr>
+    <td align="center">
+      <a href="https://github.com/">
+        <sub>
+          <b>Ruan </b>
+        </sub>
+      </a>
+    </td>
 </table>
