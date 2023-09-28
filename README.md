@@ -15,7 +15,7 @@ lista de exercícios resolvidos da primeira unidade da disciplina de microproces
     <td align="center">
       <a href="https://github.com/nyedsonlorran">
         <sub>
-          <b>Roolfo Filho</b>
+          <b>Nyedson Lorran</b>
         </sub>
       </a>
     </td>
@@ -23,7 +23,7 @@ lista de exercícios resolvidos da primeira unidade da disciplina de microproces
     <td align="center">
       <a href="https://github.com/ViniciusGbasilio">
         <sub>
-          <b>Roolfo Filho</b>
+          <b>Vinicius Basilio</b>
         </sub>
       </a>
     </td>
