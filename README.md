@@ -1,6 +1,6 @@
 # Microprocessadores
 lista de exercícios resolvidos da disciplina de microprocessadores usando o STM32
-## [Equipe de desenvolvimento](#equipe-de-desenvolvimento)
+## [lista feita pelo grupo ](#equipe-de-desenvolvimento)
 
 <table>
   <tr>
