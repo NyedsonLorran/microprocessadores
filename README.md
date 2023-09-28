@@ -5,7 +5,7 @@ lista de exercícios resolvidos da primeira unidade da disciplina de microproces
 <table>
   <tr>
     <td align="center">
-      <br><a href="https://github.com/rodolfilho"><br>
+      <a href="https://github.com/rodolfilho">
         <sub>
           <b>Roolfo Filho</b>
         </sub>
@@ -13,7 +13,7 @@ lista de exercícios resolvidos da primeira unidade da disciplina de microproces
     </td>
       <tr>
     <td align="center">
-      <br><a href="https://github.com/nyedsonlorran"><br>
+      <a href="https://github.com/nyedsonlorran">
         <sub>
           <b>Nyedson Lorran</b>
         </sub>
@@ -21,7 +21,7 @@ lista de exercícios resolvidos da primeira unidade da disciplina de microproces
     </td>
           <tr>
     <td align="center">
-      <br><a href="https://github.com/ViniciusGbasilio"><br>
+      <a href="https://github.com/ViniciusGbasilio">
         <sub>
           <b>Vinicius Basilio</b>
         </sub>
@@ -29,7 +29,7 @@ lista de exercícios resolvidos da primeira unidade da disciplina de microproces
     </td>
               <tr>
     <td align="center">
-      <a href="https://github.com/DiogorsLira"><br>
+      <a href="https://github.com/DiogorsLira">
         <sub>
           <b>Diogo Lira</b>
         </sub>
@@ -37,7 +37,7 @@ lista de exercícios resolvidos da primeira unidade da disciplina de microproces
     </td>
       <tr>
     <td align="center">
-      <a href="https://github.com/robertofilhosf"><br>
+      <a href="https://github.com/robertofilhosf">
         <sub>
           <b>Roberto Filho</b>
         </sub>
@@ -45,7 +45,7 @@ lista de exercícios resolvidos da primeira unidade da disciplina de microproces
     </td>
           <tr>
     <td align="center">
-      <a href="https://github.com/"><br>
+      <a href="https://github.com/">
         <sub>
           <b>Ruan </b>
         </sub>
