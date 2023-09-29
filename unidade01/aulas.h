@@ -353,146 +353,30 @@ while(1)
   GPIOA->ODR &= ~(1 << 4);
 }
 }
-void questao1401(void){ // não testado
+
+void questao14(void){
     RCC ->AHB1ENR |= (1<<0);// liga o clock do GPIOA
     GPIOA->MODER |= (0b01 << 0) | (0b01 << 2) | (0b01 << 4) | (0b01 << 6) |(0b01 << 8) |(0b01 << 10) |(0b01 << 12) |(0b01 << 16) |(0b01 << 18)|(0b01 << 20) |(0b01 << 22);//conf. os pinos de PA1 a PA6 e de PA8 a PA11 como saída.
-    int var=500;
-    int contador = 0;
-    int num[]={ 0b0111111, 0b0000110, 0b1011011, 0b1001111,
-              0b1100110, 0b1101101, 0b1111101, 0b0000111,
-              0b1111111, 0b1100111, 0b1110111, 0b1111100,
-              0b0111001, 0b1011110, 0b1111001, 0b1110001};//Mascaras para os displays de 7 segmentos
 
-    GPIOA->ODR |=(1 << 8);
-    GPIOA->ODR |=(1 << 7);
-
-    while(1){
-      for (int i = 0; i < 16; i++) {
-        GPIOA->ODR |= (num[i]);
-        Delay_ms(var);
-        GPIOA->ODR &= ~(num[i]);
-        contador = contador + 1;
-      }
-    
-    if (contador == 16){
-      for (int i = 14; i >= 0; i--) {
-        GPIOA->ODR |= (num[i]);
-        Delay_ms(var);
-        GPIOA->ODR &= ~(num[i]);
-      }
-    }
-  }
-}
-void questao14(void){
-
-  RCC ->AHB1ENR |= (1<<0);// liga o clock do GPIOA
-  GPIOA->MODER |= (0b01 << 0) | (0b01 << 2) | (0b01 << 4) | (0b01 << 6) |(0b01 << 8) |(0b01 << 10) |(0b01 << 12) |(0b01 << 16) |(0b01 << 18)|(0b01 << 20) |(0b01 << 22);//conf. os pinos de PA1 a PA6 e de PA8 a PA11 como saída.
-  int num[]={ 0b0111111, 0b0000110, 0b1011011, 0b1001111,
-  
   int var=500;
+  int contador = 0;
   int num[]={ 0b0111111, 0b0000110, 0b1011011, 0b1001111,
             0b1100110, 0b1101101, 0b1111101, 0b0000111,
             0b1111111, 0b1100111, 0b1110111, 0b1111100,
             0b0111001, 0b1011110, 0b1111001, 0b1110001};//Mascaras para os displays de 7 segmentos
-  
-  GPIOA->ODR |=(1 << 8);
-  GPIOA->ODR |=(1 << 7);
-  
-  while(1){
-    GPIOA->ODR |= (0b0111111);//0
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b0111111);
-    GPIOA->ODR |= (0b0000110); //1
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b0000110);
-    GPIOA->ODR |= (0b1011011);//2
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1011011);
-    GPIOA->ODR |= (0b1001111);//3
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1001111);
-    GPIOA->ODR |= (0b1100110);//4
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1100110);
-    GPIOA->ODR |= (0b1101101);//5
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1100110);
-    GPIOA->ODR |= (0b1111101);//6
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1111101);
-    GPIOA->ODR |= (0b0000111);//7
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b0000111);
-    GPIOA->ODR |= (0b1111111);//8
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1111111);
-    GPIOA->ODR |= (0b1100111);//9
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1100111);
-    GPIOA->ODR |= (0b1110111); //A
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1110111);
-    GPIOA->ODR |= (0b1111100); //B
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1111100);
-    GPIOA->ODR |= (0b0111001); //C
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b0111001);
-    GPIOA->ODR |= (0b1011110); //D
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1011110);
-    GPIOA->ODR |= (0b1111001); //E
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1111001);
-    GPIOA->ODR |= (0b1110001); //F
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1110001);
+    for (int i = 0; i <= 14; i++) {
+      GPIOA->ODR |= (num[i]);
+      Delay_ms(var);
+      GPIOA->ODR &= ~(num[i]);
+      contador = contador + 1;
+    }
+    for (int i = 15; i >= 0; i--) {
+      GPIOA->ODR |= (num[i]);
+      Delay_ms(var);
+      GPIOA->ODR &= ~(num[i]);
+    }
+  }
 
-    //decr.
-    GPIOA->ODR |= (0b1111001); //E
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1111001);
-    GPIOA->ODR |= (0b1011110); //D
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1011110);
-    GPIOA->ODR |= (0b0111001); //C
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b0111001);
-    GPIOA->ODR |= (0b1111100); //B
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1111100);
-    GPIOA->ODR |= (0b1110111); //A
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1110111);
-    GPIOA->ODR |= (0b1100111);//9
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1100111);
-    GPIOA->ODR |= (0b1111111);//8
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1111111);
-    GPIOA->ODR |= (0b0000111);//7
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b0000111);
-    GPIOA->ODR |= (0b1111101);//6
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1111101);
-    GPIOA->ODR |= (0b1101101);//5
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1101101);
-    GPIOA->ODR |= (0b1100110);//4
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1100110);
-    GPIOA->ODR |= (0b1001111);//3
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1001111);
-    GPIOA->ODR |= (0b1011011);//2
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b1011011);
-    GPIOA->ODR |= (0b0000110); //1
-    Delay_ms(var);
-    GPIOA->ODR &= ~(0b0000110);
-  }
-  }
 
 
 void questao15(void){
