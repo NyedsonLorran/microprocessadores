@@ -25,6 +25,7 @@ int main(void){
 //questao12();
 //questao13();
 //questao14();
+//questao1401(); //testar
 //questao15();
 //questao16(CANCELADA);
 //questao17();
