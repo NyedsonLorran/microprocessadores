@@ -730,7 +730,7 @@ void questao25(void){
 #define K0  !(GPIOE -> IDR & (1<<4))
 #define K1  !(GPIOE -> IDR & (1<<3))
   
-RCC->AHB1ENR |= (1<<0);           //habilita o clock do GPIOA
+RCC->AHB1ENR |= (1<<0);     //habilita o clock do GPIOA
 RCC->AHB1ENR |= (1<<4);    //habilita o clock do GPIOE
 
 GPIOA->MODER |= (0b01 << 12);
