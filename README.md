@@ -7,7 +7,7 @@ lista de exercícios resolvidos da primeira unidade da disciplina de microproces
     <td align="center">
       <a href="https://github.com/rodolfilho">
         <sub>
-          <b>Roolfo Filho</b>
+          <b>Rodolfo Filho</b>
         </sub>
       </a>
     </td>
