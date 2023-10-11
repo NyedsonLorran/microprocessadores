@@ -47,7 +47,7 @@ lista de exercícios resolvidos da primeira unidade da disciplina de microproces
     <td align="center">
       <a href="https://github.com/ruanserafim1">
         <sub>
-          <b>Ruan </b>
+          <b>Ruan Serafim </b>
         </sub>
       </a>
     </td>
