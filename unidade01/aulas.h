@@ -17,6 +17,9 @@ while(1){
   Delay_ms(250);
   }
 }
+
+
+
 void questao02(void){
 RCC-> AHB1ENR |= 1;           // liga o clock do GPIOA
 GPIOA -> MODER |= 0b01 << 12; // pino PA6 como saída
@@ -113,147 +116,154 @@ while(1){
 }
 }
 void questao09(void){
-RCC-> AHB1ENR |= 1;
-GPIOA -> MODER |= (0b01 << 12) | (0b01 << 14);
-while(1){
-  GPIOA->ODR |=1 << 6;
-  GPIOA->ODR |=1 << 7;
-  Delay_ms(1000);
-  GPIOA->ODR &= ~(1 << 6);
-  GPIOA->ODR |=1 << 7;
-  Delay_ms(1000);
-  GPIOA->ODR |=1 << 6;
-  GPIOA->ODR &= ~(1 << 7);
-  Delay_ms(1000);
-  GPIOA->ODR &= ~(1 << 6);
-  GPIOA->ODR &= ~(1 << 7);
-  Delay_ms(1000);
-};
+    RCC-> AHB1ENR |= 1;
+    GPIOA -> MODER |= (0b01 << 12) | (0b01 << 14);
+    while(1){
+          GPIOA->ODR |=1 << 6;
+          GPIOA->ODR |=1 << 7;
+          Delay_ms(1000);
+          GPIOA->ODR &= ~(1 << 6);
+          GPIOA->ODR |=1 << 7;
+          Delay_ms(1000);
+          GPIOA->ODR |=1 << 6;
+          GPIOA->ODR &= ~(1 << 7);
+          Delay_ms(1000);
+          GPIOA->ODR &= ~(1 << 6);
+          GPIOA->ODR &= ~(1 << 7);
+          Delay_ms(1000);
+    }
 }
-void questao10(void){
-RCC->AHB1ENR |= 1;           // liga o clock do GPIOA
-GPIOA->MODER |= (0b01 << 12) | (0b01 << 14); // conf. os pinos PA6 e PA7 como saída
-int contador = 0;
-int bool = 1;
-while(1){
-  GPIOA->ODR &= ~(1 << 6);  //nível baixo para o pino
-  GPIOA->ODR |=(1 << 7);
-  Delay_us(contador);
-  GPIOA->ODR |=(1 << 6);  // nível alto no pino
-  GPIOA->ODR &= ~(1 << 7);
-  Delay_us(10000-contador);
-  if (bool){
-    contador=contador+10;
-    bool = contador == 10000 ? 0 : 1;
-  }
-  else
-    contador=contador-10;
-    bool = contador == 0 ? 1 : 0;
-}
-void questao11(void){
 
-RCC->AHB1ENR |= 1; // liga o clock do GPIOA
-GPIOA->MODER |= (0b01 << 0) | (0b01 << 2) | (0b01 << 4) | (0b01 << 6) | (0b01 << 8) | (0b01 << 10)| (0b01 << 12) | (0b01 << 14); //ligando do PA0 ao PA7
-int i = 0;
-while(1){
-    if ((i>>0)&1){
-        GPIOA->ODR |=(1 << 0);
-    }
-    else{
-        GPIOA->ODR &= ~(1 << 0);
-    }
-    if ((i>>1)&1){
-        GPIOA->ODR |=(1 << 1);
-    }
-    else{
-        GPIOA->ODR &= ~(1 << 1);
-    }
-    if ((i>>2)&1){
-        GPIOA->ODR |=(1 << 2);
-    }
-    else{
-        GPIOA->ODR &= ~(1 << 2);
-    }
-    if ((i>>3)&1){
-        GPIOA->ODR |=(1 << 3);
-    }
-    else{
-        GPIOA->ODR &= ~(1 << 3);
-    }
-    if ((i>>4)&1){
-        GPIOA->ODR |=(1 << 4);
-    }
-    else{
-        GPIOA->ODR &= ~(1 << 4);
-    }
-    if ((i>>5)&1){
-        GPIOA->ODR |=(1 << 5);
-    }
-    else{
-        GPIOA->ODR &= ~(1 << 5);
-    }
-    if ((i>>6)&1){
-        GPIOA->ODR |=(1 << 6);
-    }
-    else{
-        GPIOA->ODR &= ~(1 << 6);
-    }
-    if ((i>>7)&1){
+
+
+void questao10(void){
+    RCC->AHB1ENR |= 1;           // liga o clock do GPIOA
+    GPIOA->MODER |= (0b01 << 12) | (0b01 << 14); // conf. os pinos PA6 e PA7 como saída
+    int contador = 0;
+    int bool = 1;
+    while(1){
+        GPIOA->ODR &= ~(1 << 6);  //nível baixo para o pino
         GPIOA->ODR |=(1 << 7);
-    }
-    else{
+        Delay_us(contador);
+        GPIOA->ODR |=(1 << 6);  // nível alto no pino
         GPIOA->ODR &= ~(1 << 7);
+        Delay_us(10000-contador);
+        if (bool){
+            contador=contador+10;
+            bool = contador == 10000 ? 0 : 1;
+        }
+        else
+            contador=contador-10;
+            bool = contador == 0 ? 1 : 0;
+        }
+
+
+
+void questao11(void){
+    RCC->AHB1ENR |= 1; // liga o clock do GPIOA
+    GPIOA->MODER |= (0b01 << 0) | (0b01 << 2) | (0b01 << 4) | (0b01 << 6) | (0b01 << 8) | (0b01 << 10)| (0b01 << 12) | (0b01 << 14); //ligando do PA0 ao PA7
+    int i = 0;
+    while(1){
+        if ((i>>0)&1){
+            GPIOA->ODR |=(1 << 0);
+        }
+        else{
+            GPIOA->ODR &= ~(1 << 0);
+        }
+        if ((i>>1)&1){
+            GPIOA->ODR |=(1 << 1);
+        }
+        else{
+            GPIOA->ODR &= ~(1 << 1);
+        }
+        if ((i>>2)&1){
+            GPIOA->ODR |=(1 << 2);
+        }
+        else{
+            GPIOA->ODR &= ~(1 << 2);
+        }
+        if ((i>>3)&1){
+            GPIOA->ODR |=(1 << 3);
+        }
+        else{
+            GPIOA->ODR &= ~(1 << 3);
+        }
+        if ((i>>4)&1){
+            GPIOA->ODR |=(1 << 4);
+        }
+        else{
+            GPIOA->ODR &= ~(1 << 4);
+        }
+        if ((i>>5)&1){
+            GPIOA->ODR |=(1 << 5);
+        }
+        else{
+            GPIOA->ODR &= ~(1 << 5);
+        }
+        if ((i>>6)&1){
+            GPIOA->ODR |=(1 << 6);
+        }
+        else{
+            GPIOA->ODR &= ~(1 << 6);
+        }
+        if ((i>>7)&1){
+            GPIOA->ODR |=(1 << 7);
+        }
+        else{
+            GPIOA->ODR &= ~(1 << 7);
+        }
+        i++;
+        Delay_ms(100);
+        }
     }
-    i++;
-    Delay_ms(100);
-    }
-}
+
+
+
 void questao12(void){
-RCC->AHB1ENR |= (1 << 0);    // liga o clock do GPIOA
-GPIOA->MODER |= ((0b01 << 0)|(0b01 << 2) | (0b01 << 4) | (0b01 << 6) | (0b01 << 8) | (0b01 << 10) | (0b01 << 12)| (0b01 << 14)); // colocando do PA1 ao PA8 como saida
-while(1){
-    int cont = 0 ;
-    for(int i=cont; i <7;i++){
-        GPIOA -> ODR |= (1 << i);
-        Delay_ms(200);
-        GPIOA -> ODR &= ~(1 << i);
-        cont++;
-    }
-  
-    if (cont == 7 ){
-        for(int i=7; i >0;i--){
+    RCC->AHB1ENR |= (1 << 0);    // liga o clock do GPIOA
+    GPIOA->MODER |= ((0b01 << 0)|(0b01 << 2) | (0b01 << 4) | (0b01 << 6) | (0b01 << 8) | (0b01 << 10) | (0b01 << 12)| (0b01 << 14)); // colocando do PA1 ao PA8 como saida
+    while(1){
+        int cont = 0 ;
+        for(int i=cont; i <7;i++){
             GPIOA -> ODR |= (1 << i);
             Delay_ms(200);
             GPIOA -> ODR &= ~(1 << i);
+            cont++;
+        }
+      
+        if (cont == 7 ){
+            for(int i=7; i >0;i--){
+                GPIOA -> ODR |= (1 << i);
+                Delay_ms(200);
+                GPIOA -> ODR &= ~(1 << i);
+                }
             }
         }
     }
-}
 
 
 
 void questao13(void){
-RCC-> AHB1ENR |= (1 << 0); // liga o clock do GPIOA
-GPIOA -> MODER |= (0b01 << 0) | (0b01 << 2) | (0b01 << 4); // conf. os pino PA0, PA1 e PA2 como saída usando o 0b01 do primeiro semaforo.
-GPIOA -> MODER |= (0b01 << 6) | (0b01 << 8) | (0b01 << 10); // conf. os pino PA3, PA4 e PA5 como saída usando o 0b01 do segundo semaforo.
-
-while(1){
-    // Semaforo 01
-    GPIOA->ODR |=(1 << 0);  //  liga PA0
-    GPIOA->ODR |=(1 << 5);  //  liga PA5
-    Delay_ms(2000);
-    GPIOA->ODR &= ~(1 << 0);
-    GPIOA->ODR |= (1 << 1);
-    Delay_ms(1000);
-    GPIOA->ODR &= ~((1 << 1)|(1 << 5));
-    GPIOA->ODR |= ((1 << 3)|(1 << 2));
-    Delay_ms(2000);
-    GPIOA->ODR &= ~(1 << 3);
-    GPIOA->ODR |= (1 << 4);
-    Delay_ms(1000);
-    GPIOA->ODR &= ~(1 << 2);
-    GPIOA->ODR &= ~(1 << 4);
-    }
+    RCC-> AHB1ENR |= (1 << 0); // liga o clock do GPIOA
+    GPIOA -> MODER |= (0b01 << 0) | (0b01 << 2) | (0b01 << 4); // conf. os pino PA0, PA1 e PA2 como saída usando o 0b01 do primeiro semaforo.
+    GPIOA -> MODER |= (0b01 << 6) | (0b01 << 8) | (0b01 << 10); // conf. os pino PA3, PA4 e PA5 como saída usando o 0b01 do segundo semaforo.
+    while(1){
+        // Semaforo 01
+        GPIOA->ODR |=(1 << 0);  //  liga PA0
+        GPIOA->ODR |=(1 << 5);  //  liga PA5
+        Delay_ms(2000);
+        GPIOA->ODR &= ~(1 << 0);
+        GPIOA->ODR |= (1 << 1);
+        Delay_ms(1000);
+        GPIOA->ODR &= ~((1 << 1)|(1 << 5));
+        GPIOA->ODR |= ((1 << 3)|(1 << 2));
+        Delay_ms(2000);
+        GPIOA->ODR &= ~(1 << 3);
+        GPIOA->ODR |= (1 << 4);
+        Delay_ms(1000);
+        GPIOA->ODR &= ~(1 << 2);
+        GPIOA->ODR &= ~(1 << 4);
+        }
 }
 
 
@@ -313,9 +323,12 @@ while(1){
     }
 }
 
+
+
 void questao16(void){
     int cancelada = 0;
 } //cancelada
+
 
 
 void questao17(void){
@@ -328,7 +341,6 @@ void questao17(void){
             GPIOA->ODR &= ~(1 << 0);
             Delay_us(20000-x);
         }
-
         for(int x = 2500; x >= 500; x-=10){
             GPIOA->ODR |= (1 << 0);
             Delay_us(x);
@@ -485,25 +497,28 @@ GPIOE->MODER &= ~((0b11<<8) | (0b11 << 6)); // configurando o pino PE4 como entr
 GPIOE ->PUPDR  |= (0b01 << 8) | (0b01 << 6); // liga resistor em pull up em PE4
 
 while(1){
-  int leitura1 = GPIOE->IDR & (1<<3);
-  int leitura2 = GPIOE->IDR & (1<<4);
-/*
-ODR ESCREVE O PINO
-IDR LER O NIVEL DO PINO
-*/
-if(leitura1){
-  GPIOA->ODR |= (1 << 6);
-}
-else
-  GPIOA->ODR &= ~(1 << 6);
-  
-if(leitura2){
-GPIOA->ODR |= (1 << 7);
-}
-else
-GPIOA->ODR &= ~(1 << 7);
-  }
-}
+    int leitura1 = GPIOE->IDR & (1<<3);
+    int leitura2 = GPIOE->IDR & (1<<4);
+    /*
+    ODR ESCREVE O PINO
+    IDR LER O NIVEL DO PINO
+    */
+    if(leitura1){
+        GPIOA->ODR |= (1 << 6);
+    }
+    else
+        GPIOA->ODR &= ~(1 << 6);
+      
+    if(leitura2){
+        GPIOA->ODR |= (1 << 7);
+    }
+    else
+        GPIOA->ODR &= ~(1 << 7);
+        }
+    }
+
+
+
 void questao23(void){
     RCC->AHB1ENR |= (1 << 4);
     RCC->AHB1ENR |= 1;
@@ -524,6 +539,9 @@ void questao23(void){
         }
     }
 } //com erro
+
+
+
 void questao24(void){
 RCC->AHB1ENR |= (1<<0) | (1<<4); // habilitando o clock da porta A e E
 GPIOA->MODER |= (0b01<<12);  // configurando o pino PA6 como saida
@@ -531,24 +549,26 @@ GPIOE->MODER &= ~((0b11<<8) | (0b11 << 6)); // configurando o pino PE4 como entr
 GPIOE ->PUPDR  |= (0b01 << 8) | (0b01 << 6); // liga resistor em pull up em PE4
 
 while(1){
-  int leitura1 = GPIOE->IDR & (1<<3);
-  int leitura2 = GPIOE->IDR & (1<<4);
-  
-  if(!leitura2){
-    GPIOA->ODR &= ~(1 << 8);
-  }
-  else
-    GPIOA->ODR |= (1 << 6);
-
-  if(!leitura1){
-  GPIOA->ODR &= ~(1 << 6);
-  }
-  else 
-    GPIOA->ODR |= (1 << 6);
-  }
+    int leitura1 = GPIOE->IDR & (1<<3);
+    int leitura2 = GPIOE->IDR & (1<<4);
+    
+    if(!leitura2){
+        GPIOA->ODR &= ~(1 << 8);
+    }
+    else{
+        GPIOA->ODR |= (1 << 6);
+    }    
+    if(!leitura1){
+        GPIOA->ODR &= ~(1 << 6);
+    }
+    else 
+        GPIOA->ODR |= (1 << 6);
+    }
 } 
+
+
+
 void questao25(void){
-  
 #define K0  !(GPIOE -> IDR & (1<<4))
 #define K1  !(GPIOE -> IDR & (1<<3))
   
@@ -583,6 +603,8 @@ if(K0 && !K1){
     }
   }
 }
+
+
 
 void questao26(void){
 
